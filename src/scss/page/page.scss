@@ -1,0 +1,13 @@
+@import "../variables/variables";
+
+.page {
+  width: 100%;
+  height: auto;
+  background: $base-white;
+  height: calc(100vh - 240px);
+  overflow-y: scroll;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}

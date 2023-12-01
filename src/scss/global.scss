@@ -1,0 +1,13 @@
+// reset stylesheets
+@import "./reset/normalize.scss";
+
+// layout stylesheets
+@import "./layout/authorized.layout.scss";
+@import "./layout/unauthorized.layout.scss";
+
+// page stylesheet
+@import "./page/page.scss";
+
+// component stylesheet
+@import "./component/top-navigation.component.scss";
+@import "./component/lower-navigation.component.scss";
