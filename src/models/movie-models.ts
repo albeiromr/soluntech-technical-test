@@ -6,12 +6,12 @@ export namespace MovieModels {
     page: string;
     next: string;
     entries: number;
-    results: RawMovie[];
+    results: Raw[];
   }
   /**
    * Represents the raw movie data returned by the service
    */
-  export interface RawMovie {
+  export interface Raw {
     _id: string;
     id: string;
     primaryImage: PrimaryImage;
@@ -76,6 +76,24 @@ export namespace MovieModels {
   }
 
   /**
+   * Represents an individual movie fetched as an individual object, not an array
+   */
+  export interface RawIndividualMovie {
+    results: Results;
+  }
+
+  interface Results {
+    _id: string;
+    id: string;
+    primaryImage: PrimaryImage;
+    titleType: TitleType;
+    titleText: TitleText;
+    originalTitleText: TitleText;
+    releaseYear: ReleaseYear;
+    releaseDate: ReleaseDate;
+  }
+
+  /**
    * Represents an individual movie with only the required filds for the application
    */
   export interface CleanMovie {
@@ -83,5 +101,6 @@ export namespace MovieModels {
     img: PrimaryImage;
     title: string;
     type: string;
+    category?: string;
   }
 }

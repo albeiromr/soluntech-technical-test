@@ -5,7 +5,7 @@
   width: 100%;
   height: auto;
   background: $base-white;
-  padding: 0 $medium-spacing 30px $medium-spacing;
+  padding: 0 $medium-spacing 20px $medium-spacing;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -23,7 +23,7 @@
 
   &__title {
     margin:  0 10% 0 0 ;
-    width: calc(100% - 15px);
+    width: calc(100% - 40px);
     text-align: center;
     font-size: $medium-font-size;
     color: $medium-black;

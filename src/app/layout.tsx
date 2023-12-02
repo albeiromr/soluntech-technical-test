@@ -32,8 +32,6 @@ export default function RootLayout({
           <NavigationComponent />
 
           {children}
-
-          <LowerNavigationComponent />
         </div>
       </body>
     </html>

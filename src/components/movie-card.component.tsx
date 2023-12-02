@@ -1,5 +1,8 @@
+'use client'
+
 import { MovieModels } from "@/models/movie-models";
 import Image from "next/image";
+import { useRouter } from 'next/navigation'
 
 interface props {
   id: string;
@@ -9,8 +12,14 @@ interface props {
 }
 
 const MovieCardComponent: React.FC<props> = ({ id, img, title, type }) => {
+  const router = useRouter()
+
+  const handleClick = () => {
+    router.push(`/movie-details/${id}`)
+  }
+
   return (
-    <article className="movie-card">
+    <article className="movie-card" onClick={handleClick}>
       <div className="movie-card__img-container">
         <Image
             className="movie-card__img"

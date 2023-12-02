@@ -1,13 +1,15 @@
 // reset stylesheets
 @import "./reset/normalize.scss";
 
+// shared stylesheets
+@import "./shared/button.scss";
+
 // layout stylesheets
-@import "./layout/authorized.layout.scss";
+@import "./layout/root.layout.scss";
 
 // page stylesheet
 @import "./page/page.scss";
 
 // component stylesheet
 @import "./component/top-navigation.component.scss";
-@import "./component/lower-navigation.component.scss";
 @import "./component/movie-card.component.scss";
