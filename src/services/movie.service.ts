@@ -32,8 +32,15 @@ export class MovieService {
         const cleanMovie: MovieModels.CleanMovie = {
             id: movie.id,
             img: movie.primaryImage,
+            title: movie.titleText.text,
+            type: movie.titleType.text,
         }
-        if( cleanMovie.img.width < 500 || !cleanMovie.img.url) return {} as MovieModels.CleanMovie;
+
+        if( 
+          cleanMovie.img.width < 500 ||
+          cleanMovie.img.width > 1800 ||
+          !cleanMovie.img.url
+        ) return {} as MovieModels.CleanMovie;
         else return cleanMovie;
     })
     const cleanData = newStructureArray.filter(movie => movie.id !== undefined);

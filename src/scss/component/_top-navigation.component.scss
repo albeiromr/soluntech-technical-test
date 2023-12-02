@@ -1,6 +1,31 @@
+@import "../variables/variables";
+
 .top-navigation {
+  box-sizing: border-box;
   width: 100%;
   height: auto;
-  min-height: 70px;
-  background: rgb(155, 155, 155);
+  background: $base-white;
+  padding: 0 $medium-spacing 30px $medium-spacing;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &__back-button {
+    border: none;
+    outline: none;
+    background: none;
+    cursor: pointer;
+
+    img {
+      width: 40px;
+    }
+  }
+
+  &__title {
+    margin:  0 10% 0 0 ;
+    width: calc(100% - 15px);
+    text-align: center;
+    font-size: $medium-font-size;
+    color: $medium-black;
+  }
 }

@@ -81,5 +81,7 @@ export namespace MovieModels {
   export interface CleanMovie {
     id: string;
     img: PrimaryImage;
+    title: string;
+    type: string;
   }
 }

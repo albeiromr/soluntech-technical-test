@@ -16,9 +16,7 @@
   &__movie-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    column-gap: $small-spacing;
-    row-gap: $small-spacing;
+    column-gap: $medium-spacing;
+    row-gap: $medium-spacing;
   }
 }
-
-
