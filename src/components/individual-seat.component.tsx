@@ -3,36 +3,58 @@
 import { SeatStatusEnum } from "@/enums/seat-status.enum";
 import { SeatModels } from "@/models/seat.models";
 import Image from "next/image";
+import { useAppDispatch} from '@/state/typescript-hooks';
+import { changeSeatStatus } from "@/state/app.reducer";
 
 interface Props {
     params: SeatModels.IndividualSeat
 }
 
 const IndividualSeatComponent: React.FC<Props> = (props: Props) => {
+    const dispatch =  useAppDispatch();
+
+    const handleSeatClick = () => {
+        dispatch(changeSeatStatus({
+            ...props.params,
+            status: props.params.status === SeatStatusEnum.selected ? 
+                SeatStatusEnum.available : SeatStatusEnum.selected
+        }))
+    }
+
     return (
-        <button className="individual-seat">
+        <button 
+        className="individual-seat" 
+        onClick={handleSeatClick} 
+        disabled={props.params.status === SeatStatusEnum.notAvailable}
+        >
             {
                 props.params.status === SeatStatusEnum.available && <Image
-                className="individual-seat_seat-img"
-                src="/assets/available-seat.png"   
-                alt="seat image"
-                priority
+                    className="individual-seat__seat-img"
+                    src="/assets/available-seat.png"   
+                    alt="seat image"
+                    width={97}
+                    height={67}
+                    priority={true}
                 />
             }
             {
                 props.params.status === SeatStatusEnum.notAvailable && <Image
-                className="individual-seat_seat-img"
-                src="/assets/not-available-seat.png"   
-                alt="seat image"
-                priority
+                    className="individual-seat__seat-img"
+                    src="/assets/not-available-seat.png"   
+                    alt="seat image"
+                    width={97}
+                    height={67}
+                    priority={true}
                 />
             }
             {
                 props.params.status === SeatStatusEnum.selected && <Image
-                className="individual-seat_seat-img"
-                src="/assets/selected-seat.png"   
-                alt="seat image"
-                priority
+                    className="individual-seat__seat-img"
+                    src="/assets/selected-seat.png"   
+                    alt="seat image"
+                    width={97}
+                    height={67}
+                    priority={true}
                 />
             }
         </button>

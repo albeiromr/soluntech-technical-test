@@ -3,15 +3,17 @@
 .seats {
   width: 100%;
   height: auto;
-  background: darkcyan;
+  background: $base-white;
 
   &__complete-row {
     box-sizing: border-box;
     width: 100%;
-    margin: 8px 0;
+    margin: 4px 0;
     height: auto;
     min-height: 50px;
-    background: darkgoldenrod;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 
   &__incomplete-row {

@@ -26,7 +26,7 @@ const MovieCardComponent: React.FC<props> = ({ id, img, title, type }) => {
             src={img.url}
             alt="movie poster"
             fill
-            priority
+            priority={true}
           />
       </div>
       <h2 className="movie-card__title">{title}</h2>

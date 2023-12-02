@@ -3,7 +3,7 @@ import { Inter } from "next/font/google";
 import Image from "next/image";
 import "@/scss/global.scss";
 import NavigationComponent from "@/components/top-navigation.component";
-import LowerNavigationComponent from "@/components/lower-navigation.component";
+import { ReduxProvider } from "@/state/provider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,19 +20,21 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.className} authorized-layout`}>
-        <div className="authorized-layout__phone-container">
-          <Image
-            className="authorized-layout__top-bar"
-            src="/assets/top-bar.jpg"
-            width={500}
-            height={59}
-            alt="phone top bar"
-          />
+        <ReduxProvider>
+          <div className="authorized-layout__phone-container">
+            <Image
+              className="authorized-layout__top-bar"
+              src="/assets/top-bar.jpg"
+              width={500}
+              height={59}
+              alt="phone top bar"
+            />
 
-          <NavigationComponent />
+            <NavigationComponent />
 
-          {children}
-        </div>
+            {children}
+          </div>
+        </ReduxProvider>
       </body>
     </html>
   );
