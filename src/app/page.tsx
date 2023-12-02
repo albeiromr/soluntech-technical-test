@@ -1,13 +1,19 @@
+import MovieCardComponent from "@/components/movie-card.component";
 import { MovieService } from "@/services/movie.service"
 
 export default async function HomePage() {
   const movies = await MovieService.fetchMoviesFromService();
   return (
     <main className="page">
-      <p>home page</p>
-      {
-        movies.map(movie => <p>{movie.id}</p>)
-      }
+      <div className="page__movie-grid">
+        {
+          movies.map(movie => <MovieCardComponent 
+            key={movie.id}
+            id={movie.id}
+            img={movie.img}
+          />)
+        }
+      </div>
     </main>
   )
 }

@@ -78,7 +78,8 @@ export namespace MovieModels {
   /**
    * Represents an individual movie with only the required filds for the application
    */
-  export interface CleanMovie{
-        id: string;
+  export interface CleanMovie {
+    id: string;
+    img: PrimaryImage;
   }
 }

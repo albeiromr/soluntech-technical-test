@@ -1,8 +1,10 @@
 @import "../variables/variables";
 
 .page {
+  box-sizing: border-box;
   width: 100%;
   height: auto;
+  padding: $small-spacing $medium-spacing;
   background: $base-white;
   height: calc(100vh - 240px);
   overflow-y: scroll;
@@ -10,4 +12,13 @@
   &::-webkit-scrollbar {
     display: none;
   }
+
+  &__movie-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: $small-spacing;
+    row-gap: $small-spacing;
+  }
 }
+
+
