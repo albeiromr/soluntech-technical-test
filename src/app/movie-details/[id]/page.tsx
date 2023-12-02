@@ -1,3 +1,4 @@
+import SelectSeatButtonComponent from "@/components/select-seat-button.component";
 import { MovieModels } from "@/models/movie-models";
 import { MovieService } from "@/services/movie.service"
 import Image from "next/image";
@@ -64,7 +65,7 @@ export default async function MovieDetailsPage(props: Props) {
         Curabitur eu malesuada elit.
       </p>
 
-      <button className="filled-button" >Select Seat</button>
+      <SelectSeatButtonComponent id={movie.id}/>
 
     </section>
   )
