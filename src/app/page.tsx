@@ -6,6 +6,7 @@ export default async function LatestMoviesPage() {
   return (
     <main className="page">
       <div className="page__movie-grid">
+
         {
           movies.map(movie => <MovieCardComponent 
             key={movie.id}
@@ -15,6 +16,7 @@ export default async function LatestMoviesPage() {
             type={movie.type}
           />)
         }
+        
       </div>
     </main>
   )

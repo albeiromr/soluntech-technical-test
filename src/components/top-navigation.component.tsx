@@ -3,10 +3,18 @@
 import { useRouter } from 'next/navigation'
 import { usePathname } from 'next/navigation'
 import { TopNavigationService } from '@/services/top-navigation.service';
+import { useAppDispatch, useAppSelector } from '@/state/typescript-hooks';
+import { useEffect } from 'react';
+import { resetAppState } from '@/state/app.reducer';
 
 export default function TopNavigationComponent() {
   const router = useRouter();
   const pathname = usePathname();
+  const dispatch = useAppDispatch();
+
+  useEffect(() => {
+    if(pathname === "/") dispatch(resetAppState());
+  }, [pathname]);
   
   const handleBackClick = () => {
     router.back();
