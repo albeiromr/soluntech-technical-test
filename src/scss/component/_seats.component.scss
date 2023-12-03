@@ -8,9 +8,9 @@
   &__complete-row {
     box-sizing: border-box;
     width: 100%;
-    margin: 4px 0;
     height: auto;
-    min-height: 50px;
+    min-height: 45px;
+    padding: 0 15px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -18,7 +18,7 @@
 
   &__incomplete-row {
     @extend .seats__complete-row;
-    padding: 0 50px;
+    padding: 0 70px;
 
     &:first-child {
       margin-top: 0;
