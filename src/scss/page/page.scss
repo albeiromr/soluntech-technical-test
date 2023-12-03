@@ -111,4 +111,30 @@
       max-width: 75%;
     }
   }
+
+  &__seats-explanation {
+    box-sizing: border-box;
+    margin-top: $medium-spacing;
+    padding: 0 35px;
+    width: 100%;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    span {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      img {
+        width: 28px;
+        height: 22px;
+      }
+
+      p {
+        margin-left: 15px;
+      }
+    }
+  }
 }
