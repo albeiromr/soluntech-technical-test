@@ -12,7 +12,7 @@ const SelectSeatPage = () => {
             src="/assets/pantalla.png"   
             alt="screen image"
             width={365}
-            height={69}
+            height={50}
             priority={true}
           />
       </div>

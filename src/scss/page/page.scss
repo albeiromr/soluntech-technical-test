@@ -103,21 +103,21 @@
   &__display-container {
     box-sizing: border-box;
     width: 100%;
-    height: 50px;
-    padding: 0 40px;
+    height: auto;
     margin-bottom: $small-spacing;
     display: flex;
     align-items: center;
     justify-content: center;
 
     img {
-      width: 100%;
+      width: auto;
+      height: auto;
     }
   }
 
   &__seats-explanation {
     box-sizing: border-box;
-    margin-top: $medium-spacing;
+    margin-top: $small-spacing;
     padding: 0 35px;
     width: 100%;
     height: 32px;
