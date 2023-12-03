@@ -1,10 +1,14 @@
+import { DateStatusEnum } from "@/enums/date-status.enum";
 import { SeatStatusEnum } from "@/enums/seat-status.enum";
 import { AppReducerModel } from "@/models/app-reducer.model";
+import { DateModels } from "@/models/date.models";
 import { SeatModels } from "@/models/seat.models";
 
 
 export class StateService{
-
+    /**
+     * Generates the data set for the app seats
+     */
     public static generateSeatsTemplate(): AppReducerModel["seats"] {
         const seatTemplate: AppReducerModel["seats"] = {
             a: [] as SeatModels.IndividualSeat[],
@@ -171,6 +175,45 @@ export class StateService{
         }
 
         return seatTemplate;
+    }
+
+    /**
+     * Returns five dates starting from today
+     */
+    private static getNextFiveDates(): Date[] {
+        const today = new Date();
+        const nextFiveDates: Date[] = [];
+
+        for (let i = 0; i < 5; i++) {
+            const nextDate = new Date(today);
+            //add 1 to get tomorrow's date, 2 for the day after tomorrow, and so on
+            nextDate.setDate(today.getDate() + i + 1); 
+
+            // If the resulting date is in the next month, adjust the month and year
+            if (nextDate.getMonth() !== today.getMonth()) {
+            nextDate.setMonth(today.getMonth());
+            nextDate.setFullYear(today.getFullYear());
+            }
+
+            nextFiveDates.push(nextDate);
+        }
+
+        return nextFiveDates;
+    }
+
+    /**
+     * Generates the data set for the app dates
+     */
+    public static generateDatesTemplate(): DateModels.IndividualDate[] {
+        const dates = this.getNextFiveDates();
+        const parseDates = dates.map((date, index) => ({
+            position: index,
+            status: index === 1 ? DateStatusEnum.selected : DateStatusEnum.notSelected,
+            date: date.toISOString(),
+            weekDay: date.toLocaleDateString('en-US', { weekday: 'short' }),
+            monthDay: date.getDate(),
+        }));
+        return parseDates;
     }
 
 }

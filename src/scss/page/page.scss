@@ -142,12 +142,24 @@
   }
 
   &__datetime-container {
+    box-sizing: border-box;
     width: 100%;
     height: 350px;
+    padding: $small-spacing;
     background: $medium-gray;
     position: absolute;
     bottom: 0;
     left: 0;
     border-radius: $big-border-radius $big-border-radius 0 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    h2 {
+      margin: $small-spacing 0 ;
+      font-size: 18px;
+      color: $medium-black;
+    }
   }
 }

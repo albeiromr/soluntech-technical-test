@@ -1,0 +1,44 @@
+@import "../variables/variables";
+
+.individual-date {
+  box-sizing: border-box;
+  width: 70px;
+  height: 100%;
+  padding: 12px;
+  background: $gray-300;
+  border-radius: $small-border-radius;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  outline: none;
+  border: none;
+
+  h3 {
+    margin: 7px 0;
+    font-size: $small-font-size;
+    font-weight: 400;
+    color: $base-black;
+  }
+
+  p {
+    margin: 0;
+    font-size: $medium-font-size;
+    font-weight: 600;
+    color: $medium-black;
+  }
+}
+
+.individual-date--selected {
+  @extend .individual-date;
+  background: $brand-color;
+
+  h3 {
+    color: $base-white;
+  }
+
+  p {
+    color: $base-white;
+  }
+}

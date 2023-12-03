@@ -2,6 +2,8 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { AppReducerModel } from "../models/app-reducer.model";
 import { SeatModels } from "@/models/seat.models";
 import { StateService } from "@/services/state.service";
+import { DateModels } from "@/models/date.models";
+import { DateStatusEnum } from "@/enums/date-status.enum";
 
 const initialState: AppReducerModel = {
   seats: {
@@ -13,7 +15,9 @@ const initialState: AppReducerModel = {
     f: [] as SeatModels.IndividualSeat[],
     g: [] as SeatModels.IndividualSeat[],
   },
-  selectedSeats: [] as SeatModels.IndividualSeat[]
+  selectedSeats: [] as SeatModels.IndividualSeat[],
+  dates: [] as DateModels.IndividualDate[],
+  selectedDate: {} as DateModels.IndividualDate,
 };
 
 export const appReducer = createSlice({
@@ -62,7 +66,22 @@ export const appReducer = createSlice({
         return seatId !== payloadId;
       })
       state.selectedSeats = newSeatsArray; 
-    }
+    },
+    createDatesTemplate: (state) => {
+      state.dates = StateService.generateDatesTemplate();
+    },
+    changeDateStatus: (state, action: PayloadAction<DateModels.IndividualDate>) => {
+      for(let i = 0; i < state.dates.length; i++){
+        if(i === action.payload.position){
+          state.dates[action.payload.position] = action.payload;
+          continue;
+        }
+        state.dates[i].status = DateStatusEnum.notSelected;
+      }
+    },
+    setSelectedDate: (state, action: PayloadAction<DateModels.IndividualDate>) => {
+      state.selectedDate = action.payload;
+    },
   },
 });
 
@@ -71,6 +90,9 @@ export const {
   createSeatsTemplate,
   changeSeatStatus,
   removeSelectedSeat,
-  addSelectedSeat 
+  addSelectedSeat,
+  createDatesTemplate,
+  changeDateStatus,
+  setSelectedDate,
 } = appReducer.actions;
 export default appReducer.reducer;
