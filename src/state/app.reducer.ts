@@ -21,7 +21,8 @@ export const appReducer = createSlice({
   initialState,
   reducers: {
     resetAppState: (state) => {
-      state = initialState;
+      state.seats = initialState.seats;
+      state.selectedSeats = initialState.selectedSeats;
     },
     createSeatsTemplate: (state) => {
       state.seats = StateService.generateSeatsTemplate();
