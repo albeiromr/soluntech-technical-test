@@ -31,6 +31,9 @@ export const appReducer = createSlice({
   name: "app-reducer",
   initialState,
   reducers: {
+    setSelectedMovie: (state, action: PayloadAction<MovieModels.CleanMovie>) => {
+      state.selectedMovie = action.payload;
+    },
     resetAppState: (state) => {
       state.selectedMovie = initialState.selectedMovie;
       state.seats = initialState.seats;
@@ -80,6 +83,9 @@ export const appReducer = createSlice({
       })
       state.selectedSeats = newSeatsArray; 
     },
+    cleanSelectedSeats: (state) => {
+      state.selectedSeats = initialState.selectedSeats;
+    },
     createDatesTemplate: (state) => {
       state.dates = StateService.generateDatesTemplate();
     },
@@ -109,21 +115,28 @@ export const appReducer = createSlice({
     },
     setSelectedHour: (state, action: PayloadAction<HourModels.IndividualHour>) => {
       state.selectedHour = action.payload;
+    },
+    setTotalPrice: (state) => {
+      const basedSeatPrice: number = 85.48;
+      state.totalPrice = state.selectedSeats.length * basedSeatPrice;
     }
   },
 });
 
-export const { 
+export const {
+  setSelectedMovie,
   resetAppState,
   createSeatsTemplate,
   changeSeatStatus,
   removeSelectedSeat,
   addSelectedSeat,
+  cleanSelectedSeats,
   createDatesTemplate,
   changeDateStatus,
   setSelectedDate,
   createHoursTemplate,
   changeHourStatus,
   setSelectedHour,
+  setTotalPrice,
 } = appReducer.actions;
 export default appReducer.reducer;

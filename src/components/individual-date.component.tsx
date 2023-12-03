@@ -2,15 +2,21 @@
 
 import { DateStatusEnum } from "@/enums/date-status.enum";
 import { DateModels } from "@/models/date.models";
-import { changeDateStatus, setSelectedDate } from "@/state/app.reducer";
+import { changeDateStatus, cleanSelectedSeats, createHoursTemplate, createSeatsTemplate, setSelectedDate } from "@/state/app.reducer";
 import { useAppDispatch, useAppSelector } from '@/state/typescript-hooks';
+import { useEffect } from "react";
 
 interface Props {
     params: DateModels.IndividualDate;
 }
 
 const IndividualDateComponent: React.FC<Props> = (props: Props) => {
+    const {dates} = useAppSelector(state => state.appReducer);
     const dispatch = useAppDispatch();
+
+    useEffect(() => {
+        if(props.params.status === DateStatusEnum.selected) dispatch(setSelectedDate(props.params));
+    }, [dates])
 
     const handleClick = () => {
         const newDate = {
@@ -19,6 +25,9 @@ const IndividualDateComponent: React.FC<Props> = (props: Props) => {
         };
         dispatch(changeDateStatus(newDate));
         dispatch(setSelectedDate(newDate));
+        dispatch(cleanSelectedSeats());
+        dispatch(createSeatsTemplate());
+        dispatch(createHoursTemplate());
     }
 
     return (
