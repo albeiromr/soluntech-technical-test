@@ -1,3 +1,4 @@
+import ConfirmSeatComponent from "@/components/confirm-seat.component";
 import DatesComponent from "@/components/dates.component";
 import HoursComponent from "@/components/hours.component";
 import SeatsComponent from "@/components/seats.component";
@@ -60,7 +61,8 @@ export default function SelectSeatPage() {
 
         <DatesComponent />
         <HoursComponent />
-
+        <ConfirmSeatComponent />
+        
       </div>
     </section>
   )
