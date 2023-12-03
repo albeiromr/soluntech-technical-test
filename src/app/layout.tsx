@@ -12,11 +12,11 @@ export const metadata: Metadata = {
   description: "Prueba técnica para la empresa soluntech",
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+interface Props {
+  children: React.ReactNode
+}
+
+const RootLayout = (props: Props) => {
   return (
     <html lang="en">
       <body className={`${inter.className} authorized-layout`}>
@@ -32,10 +32,12 @@ export default function RootLayout({
 
             <NavigationComponent />
 
-            {children}
+            {props.children}
           </div>
         </ReduxProvider>
       </body>
     </html>
   );
 }
+
+export default RootLayout;

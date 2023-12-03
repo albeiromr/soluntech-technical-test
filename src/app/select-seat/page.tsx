@@ -4,7 +4,7 @@ import HoursComponent from "@/components/hours.component";
 import SeatsComponent from "@/components/seats.component";
 import Image from "next/image";
 
-export default function SelectSeatPage() {
+const SelectSeatPage = () => {
   return (
     <section className="page">
       <div className="page__display-container">
@@ -67,3 +67,5 @@ export default function SelectSeatPage() {
     </section>
   )
 }
+
+export default SelectSeatPage;

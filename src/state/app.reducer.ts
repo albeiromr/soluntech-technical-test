@@ -81,7 +81,7 @@ export const movieReducer = createSlice({
         const seatId = `${seat.row}${seat.position}`
         return seatId !== payloadId;
       })
-      state.selectedSeats = newSeatsArray; 
+      state.selectedSeats = newSeatsArray;
     },
     cleanSelectedSeats: (state) => {
       state.selectedSeats = initialState.selectedSeats;
@@ -90,8 +90,8 @@ export const movieReducer = createSlice({
       state.dates = StateService.generateDatesTemplate();
     },
     changeDateStatus: (state, action: PayloadAction<DateModels.IndividualDate>) => {
-      for(let i = 0; i < state.dates.length; i++){
-        if(i === action.payload.position){
+      for (let i = 0; i < state.dates.length; i++) {
+        if (i === action.payload.position) {
           state.dates[action.payload.position] = action.payload;
           continue;
         }
@@ -105,8 +105,8 @@ export const movieReducer = createSlice({
       state.hours = StateService.generateHoursTemplate();
     },
     changeHourStatus: (state, action: PayloadAction<HourModels.IndividualHour>) => {
-      for(let i = 0; i < state.hours.length; i++){
-        if(i === action.payload.position){
+      for (let i = 0; i < state.hours.length; i++) {
+        if (i === action.payload.position) {
           state.hours[action.payload.position] = action.payload;
           continue;
         }

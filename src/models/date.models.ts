@@ -5,7 +5,7 @@ export namespace DateModels {
    * Represents the data struture for an individual date
    */
   export interface IndividualDate {
-    position: number,
+    position: number;
     status: DateStatusEnum;
     date: string;
     weekDay: string;

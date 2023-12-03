@@ -1,35 +1,34 @@
 .confirm-seat {
+  box-sizing: border-box;
+  width: 100%;
+  height: 80px;
+  padding: 0 $medium-spacing;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  column-gap: $small-spacing;
+
+  &__price-container {
+    padding: 15px 0;
     box-sizing: border-box;
     width: 100%;
-    height: 80px;
-    padding: 0 $medium-spacing;
-    display: grid;
-    grid-template-columns: 1fr 3fr;
-    column-gap: $small-spacing;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: space-between;
 
-    &__price-container {
-        padding: 15px 0;
-        box-sizing: border-box;
-        width: 100%;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: left;
-        justify-content: space-between;
-
-        h3 {
-            margin: 7px 0;
-            font-size: $small-font-size;
-            font-weight: 400;
-            color: $black-400;
-        }
-
-        p {
-            margin: 0;
-            font-weight: 600;
-            font-size: $medium-font-size;
-            color: $black-600;
-        }
-        
+    h3 {
+      margin: 7px 0;
+      font-size: $small-font-size;
+      font-weight: 400;
+      color: $black-400;
     }
+
+    p {
+      margin: 0;
+      font-weight: 600;
+      font-size: $medium-font-size;
+      color: $black-600;
+    }
+  }
 }

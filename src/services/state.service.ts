@@ -7,7 +7,7 @@ import { HourModels } from "@/models/hour.models";
 import { SeatModels } from "@/models/seat.models";
 
 
-export class StateService{
+export class StateService {
     /**
      * Generates the data set for the app seats
      */
@@ -25,8 +25,8 @@ export class StateService{
         // row A
         const rowAlimit: number = 7;
         const rowATakenSeat: number = Math.floor(Math.random() * (rowAlimit - 1)) + 1;
-        for(let i = 1; i < rowAlimit; i++){
-            if(i === rowATakenSeat){
+        for (let i = 1; i < rowAlimit; i++) {
+            if (i === rowATakenSeat) {
                 let seat: SeatModels.IndividualSeat = {
                     status: SeatStatusEnum.notAvailable,
                     row: "a",
@@ -47,8 +47,8 @@ export class StateService{
         // row B
         const rowBlimit: number = 9;
         const rowBTakenSeat: number = Math.floor(Math.random() * (rowBlimit - 1)) + 1;
-        for(let i = 1; i < rowBlimit; i++){
-            if(i === rowBTakenSeat){
+        for (let i = 1; i < rowBlimit; i++) {
+            if (i === rowBTakenSeat) {
                 let seat: SeatModels.IndividualSeat = {
                     status: SeatStatusEnum.notAvailable,
                     row: "b",
@@ -69,8 +69,8 @@ export class StateService{
         // row C
         const rowClimit: number = 9;
         const rowCTakenSeat: number = Math.floor(Math.random() * (rowClimit - 1)) + 1;
-        for(let i = 1; i < rowClimit; i++){
-            if(i === rowCTakenSeat){
+        for (let i = 1; i < rowClimit; i++) {
+            if (i === rowCTakenSeat) {
                 let seat: SeatModels.IndividualSeat = {
                     status: SeatStatusEnum.notAvailable,
                     row: "c",
@@ -91,8 +91,8 @@ export class StateService{
         // row D
         const rowDlimit: number = 9;
         const rowDTakenSeat: number = Math.floor(Math.random() * (rowDlimit - 1)) + 1;
-        for(let i = 1; i < rowDlimit; i++){
-            if(i === rowDTakenSeat){
+        for (let i = 1; i < rowDlimit; i++) {
+            if (i === rowDTakenSeat) {
                 let seat: SeatModels.IndividualSeat = {
                     status: SeatStatusEnum.notAvailable,
                     row: "d",
@@ -113,8 +113,8 @@ export class StateService{
         // row E
         const rowElimit: number = 9;
         const rowETakenSeat: number = Math.floor(Math.random() * (rowElimit - 1)) + 1;
-        for(let i = 1; i < rowElimit; i++){
-            if(i === rowETakenSeat){
+        for (let i = 1; i < rowElimit; i++) {
+            if (i === rowETakenSeat) {
                 let seat: SeatModels.IndividualSeat = {
                     status: SeatStatusEnum.notAvailable,
                     row: "e",
@@ -135,8 +135,8 @@ export class StateService{
         // row F
         const rowFlimit: number = 9;
         const rowFTakenSeat: number = Math.floor(Math.random() * (rowFlimit - 1)) + 1;
-        for(let i = 1; i < rowFlimit; i++){
-            if(i === rowFTakenSeat){
+        for (let i = 1; i < rowFlimit; i++) {
+            if (i === rowFTakenSeat) {
                 let seat: SeatModels.IndividualSeat = {
                     status: SeatStatusEnum.notAvailable,
                     row: "f",
@@ -157,8 +157,8 @@ export class StateService{
         // row G
         const rowGlimit: number = 7;
         const rowGTakenSeat: number = Math.floor(Math.random() * (rowGlimit - 1)) + 1;
-        for(let i = 1; i < rowGlimit; i++){
-            if(i === rowGTakenSeat){
+        for (let i = 1; i < rowGlimit; i++) {
+            if (i === rowGTakenSeat) {
                 let seat: SeatModels.IndividualSeat = {
                     status: SeatStatusEnum.notAvailable,
                     row: "g",
@@ -189,12 +189,12 @@ export class StateService{
         for (let i = 0; i < 5; i++) {
             const nextDate = new Date(today);
             //add 1 to get tomorrow's date, 2 for the day after tomorrow, and so on
-            nextDate.setDate(today.getDate() + i + 1); 
+            nextDate.setDate(today.getDate() + i + 1);
 
             // If the resulting date is in the next month, adjust the month and year
             if (nextDate.getMonth() !== today.getMonth()) {
-            nextDate.setMonth(today.getMonth());
-            nextDate.setFullYear(today.getFullYear());
+                nextDate.setMonth(today.getMonth());
+                nextDate.setFullYear(today.getFullYear());
             }
 
             nextFiveDates.push(nextDate);

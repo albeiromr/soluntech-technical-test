@@ -13,7 +13,7 @@ export async function generateStaticParams(): Promise<MovieModels.CleanMovie[]> 
   return MovieService.fetchMoviesFromService();
 }
 
-export default async function MovieDetailsPage(props: Props) {
+const MovieDetailsPage = async (props: Props) => {
   const movie: MovieModels.CleanMovie = await MovieService.fetchIndividualMovie(props.params.id);
 
   return (
@@ -71,4 +71,6 @@ export default async function MovieDetailsPage(props: Props) {
     </section>
   )
 }
+
+export default MovieDetailsPage;
 

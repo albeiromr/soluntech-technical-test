@@ -7,7 +7,7 @@ import { useAppDispatch, useAppSelector } from '@/state/typescript-hooks';
 import { useEffect } from 'react';
 import { resetAppState } from '@/state/app.reducer';
 
-export default function TopNavigationComponent() {
+const TopNavigationComponent = () => {
   const dispatch = useAppDispatch();
 
   const router = useRouter();
@@ -30,3 +30,5 @@ export default function TopNavigationComponent() {
     </header>
   )
 }
+
+export default TopNavigationComponent;

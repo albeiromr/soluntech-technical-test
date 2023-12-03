@@ -1,7 +1,6 @@
 'use client'
 
 import { useAppDispatch, useAppSelector } from '@/state/typescript-hooks';
-import IndividualHour from './individual-hour.component';
 import IndividualHourComponent from './individual-hour.component';
 
 const HoursComponent = () => {

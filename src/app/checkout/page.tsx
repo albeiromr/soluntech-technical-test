@@ -2,7 +2,7 @@
 
 import { useAppSelector } from "@/state/typescript-hooks"
 
-export default function CheckoutPage() {
+const CheckoutPage = () => {
   const {
     selectedMovie,
     selectedSeats,
@@ -33,3 +33,5 @@ export default function CheckoutPage() {
     </section>
   )
 }
+
+export default CheckoutPage;

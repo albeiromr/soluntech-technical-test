@@ -1,8 +1,9 @@
 import MovieCardComponent from "@/components/movie-card.component";
 import { MovieService } from "@/services/movie.service"
 
-export default async function LatestMoviesPage() {
+const LatestMoviesPage = async () => {
   const movies = await MovieService.fetchMoviesFromService();
+
   return (
     <main className="page">
       <div className="page__movie-grid">
@@ -21,3 +22,5 @@ export default async function LatestMoviesPage() {
     </main>
   )
 }
+
+export default LatestMoviesPage;
