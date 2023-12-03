@@ -1,0 +1,33 @@
+@import "../variables/variables";
+
+.individual-hour {
+  box-sizing: border-box;
+  width: 90px;
+  height: 100%;
+  padding: 12px;
+  background: $gray-300;
+  border-radius: $small-border-radius;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  outline: none;
+  border: none;
+
+  p {
+    margin: 7px 0;
+    font-size: $small-font-size;
+    font-weight: 400;
+    color: $base-black;
+  }
+}
+
+.individual-hour--selected {
+  @extend .individual-hour;
+  background: $brand-color;
+
+  p {
+    color: $base-white;
+  }
+}

@@ -4,6 +4,7 @@ import { SeatModels } from "@/models/seat.models";
 import { StateService } from "@/services/state.service";
 import { DateModels } from "@/models/date.models";
 import { DateStatusEnum } from "@/enums/date-status.enum";
+import { HourModels } from "@/models/hour.models";
 
 const initialState: AppReducerModel = {
   seats: {
@@ -18,6 +19,8 @@ const initialState: AppReducerModel = {
   selectedSeats: [] as SeatModels.IndividualSeat[],
   dates: [] as DateModels.IndividualDate[],
   selectedDate: {} as DateModels.IndividualDate,
+  hours: [] as HourModels.IndividualHour[],
+  selectedHour: {} as HourModels.IndividualHour,
 };
 
 export const appReducer = createSlice({
@@ -82,6 +85,9 @@ export const appReducer = createSlice({
     setSelectedDate: (state, action: PayloadAction<DateModels.IndividualDate>) => {
       state.selectedDate = action.payload;
     },
+    createHoursTemplate: (state) => {
+      state.hours = StateService.generateHoursTemplate();
+    },
   },
 });
 
@@ -94,5 +100,6 @@ export const {
   createDatesTemplate,
   changeDateStatus,
   setSelectedDate,
+  createHoursTemplate,
 } = appReducer.actions;
 export default appReducer.reducer;

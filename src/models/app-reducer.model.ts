@@ -1,5 +1,6 @@
 import { SeatModels } from "@/models/seat.models"
 import { DateModels } from "./date.models"
+import { HourModels } from "./hour.models";
 
 export interface AppReducerModel {
     seats: {
@@ -14,4 +15,6 @@ export interface AppReducerModel {
     selectedSeats: SeatModels.IndividualSeat[];
     dates: DateModels.IndividualDate[];
     selectedDate: DateModels.IndividualDate;
+    hours: HourModels.IndividualHour[];
+    selectedHour: HourModels.IndividualHour;
 }

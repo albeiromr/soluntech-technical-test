@@ -1,0 +1,12 @@
+@import "../variables/variables";
+
+.hours {
+  box-sizing: border-box;
+  padding: 0 35px;
+  width: 100%;
+  margin-bottom: $medium-spacing;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}

@@ -9,7 +9,7 @@ interface Props {
     params: DateModels.IndividualDate;
 }
 
-const IndividualDate: React.FC<Props> = (props: Props) => {
+const IndividualDateComponent: React.FC<Props> = (props: Props) => {
     const dispatch = useAppDispatch();
 
     const handleClick = () => {
@@ -32,4 +32,4 @@ const IndividualDate: React.FC<Props> = (props: Props) => {
     )
 }
 
-export default IndividualDate;
+export default IndividualDateComponent;

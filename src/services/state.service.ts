@@ -1,7 +1,9 @@
 import { DateStatusEnum } from "@/enums/date-status.enum";
+import { HourStatusEnum } from "@/enums/hour-status.enum";
 import { SeatStatusEnum } from "@/enums/seat-status.enum";
 import { AppReducerModel } from "@/models/app-reducer.model";
 import { DateModels } from "@/models/date.models";
+import { HourModels } from "@/models/hour.models";
 import { SeatModels } from "@/models/seat.models";
 
 
@@ -214,6 +216,33 @@ export class StateService{
             monthDay: date.getDate(),
         }));
         return parseDates;
+    }
+
+    /**
+     * Generates the data set for the app hours
+     */
+    public static generateHoursTemplate(): HourModels.IndividualHour[] {
+
+        const startTime = 12 * 60; // 12:00 PM in minutes
+        const endTime = 20 * 60 - 30; // 7:30 PM en minutes
+        const timeIncrement = 75; // 30 minutes diference
+
+        const hours: HourModels.IndividualHour[] = [];
+
+        for (let i = startTime; i <= endTime; i += timeIncrement) {
+            if (hours.length >= 4) break;
+
+            const hour = Math.floor(i / 60);
+            const minutes = i % 60;
+
+            const formattedHour = `${hour}:${minutes.toString().padStart(2, '0')}`;
+            const position = hours.length;
+            const status = position === 2 ? HourStatusEnum.selected : HourStatusEnum.notSelected;
+
+            hours.push({ position, status, hour: formattedHour });
+        }
+
+        return hours;
     }
 
 }

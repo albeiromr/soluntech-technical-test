@@ -1,4 +1,5 @@
 import DatesComponent from "@/components/dates.component";
+import HoursComponent from "@/components/hours.component";
 import SeatsComponent from "@/components/seats.component";
 import Image from "next/image";
 
@@ -58,7 +59,8 @@ export default function SelectSeatPage() {
         <h2>Select date and time</h2>
 
         <DatesComponent />
-        
+        <HoursComponent />
+
       </div>
     </section>
   )
