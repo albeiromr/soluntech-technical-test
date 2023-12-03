@@ -14,4 +14,8 @@
   @extend %button;
   background: $brand-color;
   color: $base-white;
+
+  &:disabled {
+    background: $strong-gray;
+  }
 }
