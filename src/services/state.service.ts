@@ -172,4 +172,5 @@ export class StateService{
 
         return seatTemplate;
     }
+
 }

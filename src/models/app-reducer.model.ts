@@ -10,4 +10,5 @@ export interface AppReducerModel {
         f: SeatModels.IndividualSeat[]
         g: SeatModels.IndividualSeat[]
     }
+    selectedSeats: SeatModels.IndividualSeat[]
 }

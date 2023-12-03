@@ -13,6 +13,7 @@ const initialState: AppReducerModel = {
     f: [] as SeatModels.IndividualSeat[],
     g: [] as SeatModels.IndividualSeat[],
   },
+  selectedSeats: [] as SeatModels.IndividualSeat[]
 };
 
 export const appReducer = createSlice({
@@ -49,12 +50,26 @@ export const appReducer = createSlice({
           state.seats.g[action.payload.position - 1] = action.payload;
           break;
       }
-      state.seats
     },
-    //replaceSeatsTemplate: (state, action: ) => {},
+    addSelectedSeat: (state, action: PayloadAction<SeatModels.IndividualSeat>) => {
+      state.selectedSeats = [...state.selectedSeats, action.payload];
+    },
+    removeSelectedSeat: (state, action: PayloadAction<SeatModels.IndividualSeat>) => {
+      const payloadId: string = `${action.payload.row}${action.payload.position}`
+      const newSeatsArray = state.selectedSeats.filter((seat) => {
+        const seatId = `${seat.row}${seat.position}`
+        return seatId !== payloadId;
+      })
+      state.selectedSeats = newSeatsArray; 
+    }
   },
-  extraReducers: (builder) => {},
 });
 
-export const { resetAppState, createSeatsTemplate, changeSeatStatus } = appReducer.actions;
+export const { 
+  resetAppState,
+  createSeatsTemplate,
+  changeSeatStatus,
+  removeSelectedSeat,
+  addSelectedSeat 
+} = appReducer.actions;
 export default appReducer.reducer;

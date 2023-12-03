@@ -4,7 +4,7 @@ import { SeatStatusEnum } from "@/enums/seat-status.enum";
 import { SeatModels } from "@/models/seat.models";
 import Image from "next/image";
 import { useAppDispatch} from '@/state/typescript-hooks';
-import { changeSeatStatus } from "@/state/app.reducer";
+import { addSelectedSeat, changeSeatStatus, removeSelectedSeat } from "@/state/app.reducer";
 
 interface Props {
     params: SeatModels.IndividualSeat
@@ -14,11 +14,25 @@ const IndividualSeatComponent: React.FC<Props> = (props: Props) => {
     const dispatch =  useAppDispatch();
 
     const handleSeatClick = () => {
-        dispatch(changeSeatStatus({
-            ...props.params,
-            status: props.params.status === SeatStatusEnum.selected ? 
-                SeatStatusEnum.available : SeatStatusEnum.selected
-        }))
+
+        if(props.params.status === SeatStatusEnum.selected){
+            dispatch(changeSeatStatus({
+                ...props.params,
+                status: SeatStatusEnum.available,
+            }));
+            dispatch(removeSelectedSeat(props.params));
+            return
+        }
+
+        if(props.params.status === SeatStatusEnum.available){
+            dispatch(changeSeatStatus({
+                ...props.params,
+                status: SeatStatusEnum.selected,
+            }));
+            dispatch(addSelectedSeat(props.params));
+            return
+        }
+        
     }
 
     return (
