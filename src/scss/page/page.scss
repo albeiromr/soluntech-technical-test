@@ -8,6 +8,7 @@
   background: $base-white;
   height: calc(100vh - 150px);
   overflow-y: scroll;
+  position: relative;
 
   &::-webkit-scrollbar {
     display: none;
@@ -36,7 +37,7 @@
 
   &__hero-img {
     object-fit: cover;
-    border-radius: $big-border-radius;
+    border-radius: $medium-border-radius;
   }
 
   &__hero-info-container {
@@ -68,7 +69,7 @@
     h3 {
       font-size: 14px;
       font-weight: 400;
-      color: $medium-gray;
+      color: $strong-gray;
       margin: 5px;
     }
 
@@ -89,7 +90,7 @@
   &__movie-type {
     margin: $small-spacing 0;
     font-size: 18px;
-    color: $medium-gray;
+    color: $strong-gray;
     font-weight: 400;
   }
 
@@ -100,15 +101,17 @@
   }
 
   &__display-container {
+    box-sizing: border-box;
     width: 100%;
-    height: 60px;
+    height: 50px;
+    padding: 0 40px;
     margin-bottom: $small-spacing;
     display: flex;
     align-items: center;
     justify-content: center;
 
     img {
-      max-width: 75%;
+      width: 100%;
     }
   }
 
@@ -136,5 +139,15 @@
         margin-left: 8px;
       }
     }
+  }
+
+  &__datetime-container {
+    width: 100%;
+    height: 350px;
+    background: $medium-gray;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    border-radius: $big-border-radius $big-border-radius 0 0;
   }
 }

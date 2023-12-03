@@ -5,7 +5,13 @@ export default function SelectSeatPage() {
   return (
     <section className="page">
       <div className="page__display-container">
-        <img src="/assets/pantalla.png" alt="cinema display image" />
+        <Image
+            src="/assets/pantalla.png"   
+            alt="screen image"
+            width={365}
+            height={69}
+            priority={true}
+          />
       </div>
 
       <SeatsComponent />
@@ -46,6 +52,8 @@ export default function SelectSeatPage() {
         </span>
 
       </div>
+
+      <div className="page__datetime-container"></div>
     </section>
   )
 }

@@ -9,31 +9,31 @@ const SeatsComponent = () => {
     return(
         <div className="seats">
             <div className="seats__incomplete-row">
-                {seats.a.map(seat => <IndividualSeatComponent params={seat}/>)}
+                {seats.a.map(seat => <IndividualSeatComponent params={seat} key={`${seat.row}${seat.position}`}/>)}
             </div>
 
             <div className="seats__complete-row">
-                {seats.b.map(seat => <IndividualSeatComponent params={seat}/>)}
+                {seats.b.map(seat => <IndividualSeatComponent params={seat} key={`${seat.row}${seat.position}`}/>)}
             </div>
 
             <div className="seats__complete-row">
-                {seats.c.map(seat => <IndividualSeatComponent params={seat}/>)}
+                {seats.c.map(seat => <IndividualSeatComponent params={seat} key={`${seat.row}${seat.position}`}/>)}
             </div>
 
             <div className="seats__complete-row">
-                {seats.d.map(seat => <IndividualSeatComponent params={seat}/>)}
+                {seats.d.map(seat => <IndividualSeatComponent params={seat} key={`${seat.row}${seat.position}`}/>)}
             </div>
 
             <div className="seats__complete-row">
-                {seats.e.map(seat => <IndividualSeatComponent params={seat}/>)}
+                {seats.e.map(seat => <IndividualSeatComponent params={seat} key={`${seat.row}${seat.position}`}/>)}
             </div>
 
             <div className="seats__complete-row">
-                {seats.f.map(seat => <IndividualSeatComponent params={seat}/>)}
+                {seats.f.map(seat => <IndividualSeatComponent params={seat} key={`${seat.row}${seat.position}`}/>)}
             </div>
 
             <div className="seats__incomplete-row">
-                {seats.g.map(seat => <IndividualSeatComponent params={seat}/>)}
+                {seats.g.map(seat => <IndividualSeatComponent params={seat} key={`${seat.row}${seat.position}`}/>)}
             </div>
         </div>
     )

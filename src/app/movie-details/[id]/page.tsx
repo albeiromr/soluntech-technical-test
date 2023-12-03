@@ -26,7 +26,8 @@ export default async function MovieDetailsPage(props: Props) {
               src={movie.img.url}
               alt="movie poster"
               fill
-              priority
+              priority={true}
+              sizes="(max-width: 768px) 80vw, (max-width: 1200px) 60vw, 15vw"
             />
         </div>
 
