@@ -5,7 +5,7 @@
   width: 70px;
   height: 100%;
   padding: 12px;
-  background: $gray-300;
+  background: $gray-500;
   border-radius: $small-border-radius;
   cursor: pointer;
   display: flex;
@@ -19,26 +19,26 @@
     margin: 7px 0;
     font-size: $small-font-size;
     font-weight: 400;
-    color: $base-black;
+    color: $black-400;
   }
 
   p {
     margin: 0;
     font-size: $medium-font-size;
     font-weight: 600;
-    color: $medium-black;
+    color: $black-600;
   }
 }
 
 .individual-date--selected {
   @extend .individual-date;
-  background: $brand-color;
+  background: $brand-main-color;
 
   h3 {
-    color: $base-white;
+    color: $white;
   }
 
   p {
-    color: $base-white;
+    color: $white;
   }
 }

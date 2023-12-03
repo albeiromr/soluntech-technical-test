@@ -5,7 +5,7 @@
   width: 100%;
   height: auto;
   padding: $small-spacing $medium-spacing;
-  background: $base-white;
+  background: $white;
   height: calc(100vh - 150px);
   overflow-y: scroll;
   position: relative;
@@ -60,7 +60,7 @@
     align-items: center;
     justify-content: center;
     border-radius: $small-border-radius;
-    background: $light-gray;
+    background: $gray-400;
 
     img {
       width: 32px;
@@ -69,34 +69,34 @@
     h3 {
       font-size: 14px;
       font-weight: 400;
-      color: $strong-gray;
+      color: $gray-900;
       margin: 5px;
     }
 
     p {
       font-size: 14px;
       margin: 0;
-      color: $base-black;
+      color: $black-400;
       font-weight: 800;
     }
   }
 
   &__movie-title {
     font-size: $big-font-size;
-    color: $medium-black;
+    color: $black-600;
     margin: $medium-spacing 0 $small-spacing 0;
   }
 
   &__movie-type {
     margin: $small-spacing 0;
     font-size: 18px;
-    color: $strong-gray;
+    color: $gray-900;
     font-weight: 400;
   }
 
   &__movie-description {
     margin-bottom: $big-spacing;
-    color: $paragraph-black;
+    color: $black-500;
     line-height: 1.5;
   }
 
@@ -139,7 +139,7 @@
         margin-left: 8px;
         font-size: $small-font-size;
         font-weight: 400;
-        color: $base-black;
+        color: $black-400;
       }
     }
   }
@@ -149,7 +149,7 @@
     width: 100%;
     height: 350px;
     padding: $small-spacing;
-    background: $medium-gray;
+    background: $gray-600;
     position: absolute;
     bottom: 0;
     left: 0;
@@ -161,7 +161,7 @@
     h2 {
       margin: $small-spacing 0 ;
       font-size: 18px;
-      color: $medium-black;
+      color: $black-600;
     }
   }
 }

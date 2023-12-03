@@ -4,7 +4,7 @@
   box-sizing: border-box;
   width: 100%;
   height: auto;
-  background: $base-white;
+  background: $white;
   padding: 0 $medium-spacing 20px $medium-spacing;
   display: flex;
   align-items: center;
@@ -26,6 +26,6 @@
     width: calc(100% - 40px);
     text-align: center;
     font-size: $medium-font-size;
-    color: $medium-black;
+    color: $black-600;
   }
 }

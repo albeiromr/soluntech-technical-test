@@ -3,7 +3,7 @@
 .authorized-layout {
   width: 100%;
   height: 100vh;
-  background: $base-black;
+  background: $black-400;
 
   &__top-bar {
     width: 100%;
@@ -11,9 +11,9 @@
   }
 
   &__phone-container {
-    width: $max-phone-size;
+    width: $phone-size;
     margin: 0 auto;
     height: auto;
-    background: $base-white;
+    background: $white;
   }
 }

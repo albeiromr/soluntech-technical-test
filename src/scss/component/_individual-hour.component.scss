@@ -5,7 +5,7 @@
   width: 90px;
   height: 100%;
   padding: 12px;
-  background: $gray-300;
+  background: $gray-500;
   border-radius: $small-border-radius;
   cursor: pointer;
   display: flex;
@@ -19,15 +19,15 @@
     margin: 7px 0;
     font-size: $small-font-size;
     font-weight: 400;
-    color: $base-black;
+    color: $black-400;
   }
 }
 
 .individual-hour--selected {
   @extend .individual-hour;
-  background: $brand-color;
+  background: $brand-main-color;
 
   p {
-    color: $base-white;
+    color: $white;
   }
 }

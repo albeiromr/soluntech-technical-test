@@ -27,9 +27,9 @@ export default function CheckoutPage() {
       <p>hour: {selectedHour.hour}</p>
       <hr />
 
-      <p>total price {totalPrice} </p>
+      <p>total price ${totalPrice} </p>
       <hr />
-      
+
     </section>
   )
 }

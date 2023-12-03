@@ -12,10 +12,10 @@
 
 .filled-button {
   @extend %button;
-  background: $brand-color;
-  color: $base-white;
+  background: $brand-main-color;
+  color: $white;
 
   &:disabled {
-    background: $strong-gray;
+    background: $gray-900;
   }
 }
