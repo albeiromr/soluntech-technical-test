@@ -3,8 +3,9 @@
 import { SeatStatusEnum } from "@/enums/seat-status.enum";
 import { SeatModels } from "@/models/seat.models";
 import Image from "next/image";
-import { useAppDispatch} from '@/state/typescript-hooks';
+import { useAppDispatch, useAppSelector} from '@/state/typescript-hooks';
 import { addSelectedSeat, changeSeatStatus, removeSelectedSeat } from "@/state/app.reducer";
+import { SeatService } from "@/services/seat.service";
 
 interface Props {
     params: SeatModels.IndividualSeat
@@ -12,6 +13,7 @@ interface Props {
 
 const IndividualSeatComponent: React.FC<Props> = (props: Props) => {
     const dispatch =  useAppDispatch();
+    const {selectedSeats} = useAppSelector(state => state.appReducer);
 
     const handleSeatClick = () => {
 
@@ -37,9 +39,9 @@ const IndividualSeatComponent: React.FC<Props> = (props: Props) => {
 
     return (
         <button 
-        className="individual-seat" 
-        onClick={handleSeatClick} 
-        disabled={props.params.status === SeatStatusEnum.notAvailable}
+            className="individual-seat" 
+            onClick={handleSeatClick} 
+            disabled={SeatService.isDisabled(props.params.status, selectedSeats.length)}
         >
             {
                 props.params.status === SeatStatusEnum.available && <Image
