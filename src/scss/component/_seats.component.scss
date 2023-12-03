@@ -14,11 +14,25 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    button:nth-child(4) {
+      margin-right: 12px;
+    }
+
+    button:nth-child(5) {
+      margin-left: 12px;
+    }
   }
 
   &__incomplete-row {
-    @extend .seats__complete-row;
-    padding: 0 70px;
+    box-sizing: border-box;
+    width: 100%;
+    height: auto;
+    min-height: 45px;
+    padding: 0 65px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
     &:first-child {
       margin-top: 0;
@@ -26,6 +40,14 @@
 
     &:last-child {
       margin-bottom: 0;
+    }
+
+    button:nth-child(3) {
+      margin-right: 12px;
+    }
+
+    button:nth-child(4) {
+      margin-left: 12px;
     }
   }
 }

@@ -2,7 +2,7 @@
 
 import { MovieModels } from "@/models/movie-models";
 import Image from "next/image";
-import { useRouter } from 'next/navigation'
+import { useRouter } from 'next/navigation';
 
 interface props {
   id: string;
