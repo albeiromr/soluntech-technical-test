@@ -26,6 +26,7 @@ const MovieCardComponent: React.FC<props> = ({ id, img, title, type }) => {
             src={img.url}
             alt="movie poster"
             fill
+            sizes="(max-width: 1920px) 15vw"
             priority={true}
           />
       </div>
