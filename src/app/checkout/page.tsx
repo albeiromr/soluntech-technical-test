@@ -18,7 +18,7 @@ const CheckoutPage = () => {
       <hr />
 
       <p>seats:</p>
-        {selectedSeats.map(seat => <p>{`${seat.row}${seat.position}`}</p>)}
+        {selectedSeats.map(seat => <p key={`${seat.row}${seat.position}`} >{`${seat.row}${seat.position}`}</p>)}
       <hr />
 
       <p>Date: {`${selectedDate.weekDay} - ${selectedDate.monthDay}`}</p>
