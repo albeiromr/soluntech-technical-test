@@ -18,20 +18,22 @@ const IndividualSeatComponent: React.FC<Props> = (props: Props) => {
     const handleSeatClick = () => {
 
         if(props.params.status === SeatStatusEnum.selected){
-            dispatch(changeSeatStatus({
+            const newSeat = {
                 ...props.params,
                 status: SeatStatusEnum.available,
-            }));
-            dispatch(removeSelectedSeat(props.params));
+            };
+            dispatch(changeSeatStatus(newSeat));
+            dispatch(removeSelectedSeat(newSeat));
             return
         }
 
         if(props.params.status === SeatStatusEnum.available){
-            dispatch(changeSeatStatus({
+            const newSeat = {
                 ...props.params,
                 status: SeatStatusEnum.selected,
-            }));
-            dispatch(addSelectedSeat(props.params));
+            };
+            dispatch(changeSeatStatus(newSeat));
+            dispatch(addSelectedSeat(newSeat));
             return
         }
         

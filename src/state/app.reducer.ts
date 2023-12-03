@@ -5,6 +5,7 @@ import { StateService } from "@/services/state.service";
 import { DateModels } from "@/models/date.models";
 import { DateStatusEnum } from "@/enums/date-status.enum";
 import { HourModels } from "@/models/hour.models";
+import { HourStatusEnum } from "@/enums/hour-status.enum";
 
 const initialState: AppReducerModel = {
   seats: {
@@ -88,6 +89,18 @@ export const appReducer = createSlice({
     createHoursTemplate: (state) => {
       state.hours = StateService.generateHoursTemplate();
     },
+    changeHourStatus: (state, action: PayloadAction<HourModels.IndividualHour>) => {
+      for(let i = 0; i < state.hours.length; i++){
+        if(i === action.payload.position){
+          state.hours[action.payload.position] = action.payload;
+          continue;
+        }
+        state.hours[i].status = HourStatusEnum.notSelected;
+      }
+    },
+    setSelectedHour: (state, action: PayloadAction<HourModels.IndividualHour>) => {
+      state.selectedHour = action.payload;
+    }
   },
 });
 
@@ -101,5 +114,7 @@ export const {
   changeDateStatus,
   setSelectedDate,
   createHoursTemplate,
+  changeHourStatus,
+  setSelectedHour,
 } = appReducer.actions;
 export default appReducer.reducer;

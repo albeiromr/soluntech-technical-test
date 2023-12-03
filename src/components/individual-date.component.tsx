@@ -13,12 +13,12 @@ const IndividualDateComponent: React.FC<Props> = (props: Props) => {
     const dispatch = useAppDispatch();
 
     const handleClick = () => {
-
-        dispatch(changeDateStatus({
+        const newDate = {
             ...props.params,
             status: DateStatusEnum.selected,
-        }));
-        dispatch(setSelectedDate(props.params));
+        };
+        dispatch(changeDateStatus(newDate));
+        dispatch(setSelectedDate(newDate));
     }
 
     return (
