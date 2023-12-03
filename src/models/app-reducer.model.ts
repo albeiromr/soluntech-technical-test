@@ -3,7 +3,7 @@ import { DateModels } from "./date.models"
 import { HourModels } from "./hour.models";
 import { MovieModels } from "./movie-models";
 
-export interface AppReducerModel {
+export interface MovieReducerModel {
     selectedMovie: MovieModels.CleanMovie;
     seats: {
         a: SeatModels.IndividualSeat[];

@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation';
 import { useEffect } from 'react';
 
 const ConfirmSeatComponent = () => {
-    const {selectedSeats, totalPrice} = useAppSelector(state => state.appReducer);
+    const {selectedSeats, totalPrice} = useAppSelector(state => state.movieReducer);
     const dispatch = useAppDispatch();
     const router = useRouter();
 

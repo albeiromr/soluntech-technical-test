@@ -13,7 +13,7 @@ interface Props {
 
 const IndividualSeatComponent: React.FC<Props> = (props: Props) => {
     const dispatch =  useAppDispatch();
-    const {selectedSeats} = useAppSelector(state => state.appReducer);
+    const {selectedSeats} = useAppSelector(state => state.movieReducer);
 
     const handleSeatClick = () => {
 

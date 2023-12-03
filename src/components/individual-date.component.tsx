@@ -11,7 +11,7 @@ interface Props {
 }
 
 const IndividualDateComponent: React.FC<Props> = (props: Props) => {
-    const {dates} = useAppSelector(state => state.appReducer);
+    const {dates} = useAppSelector(state => state.movieReducer);
     const dispatch = useAppDispatch();
 
     useEffect(() => {

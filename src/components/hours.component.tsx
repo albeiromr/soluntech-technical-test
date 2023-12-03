@@ -5,7 +5,7 @@ import IndividualHour from './individual-hour.component';
 import IndividualHourComponent from './individual-hour.component';
 
 const HoursComponent = () => {
-    const {hours} = useAppSelector(state => state.appReducer);
+    const {hours} = useAppSelector(state => state.movieReducer);
 
     return(
         <div className="hours">

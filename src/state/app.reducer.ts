@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { AppReducerModel } from "@/models/app-reducer.model";
+import { MovieReducerModel } from "@/models/app-reducer.model";
 import { SeatModels } from "@/models/seat.models";
 import { StateService } from "@/services/state.service";
 import { DateModels } from "@/models/date.models";
@@ -8,7 +8,7 @@ import { HourModels } from "@/models/hour.models";
 import { HourStatusEnum } from "@/enums/hour-status.enum";
 import { MovieModels } from "@/models/movie-models";
 
-const initialState: AppReducerModel = {
+const initialState: MovieReducerModel = {
   selectedMovie: {} as MovieModels.CleanMovie,
   seats: {
     a: [] as SeatModels.IndividualSeat[],
@@ -27,8 +27,8 @@ const initialState: AppReducerModel = {
   totalPrice: 0,
 };
 
-export const appReducer = createSlice({
-  name: "app-reducer",
+export const movieReducer = createSlice({
+  name: "movie-reducer",
   initialState,
   reducers: {
     setSelectedMovie: (state, action: PayloadAction<MovieModels.CleanMovie>) => {
@@ -138,5 +138,5 @@ export const {
   changeHourStatus,
   setSelectedHour,
   setTotalPrice,
-} = appReducer.actions;
-export default appReducer.reducer;
+} = movieReducer.actions;
+export default movieReducer.reducer;

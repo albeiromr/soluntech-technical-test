@@ -4,7 +4,7 @@ import { useAppDispatch, useAppSelector } from '@/state/typescript-hooks';
 import IndividualDateComponent from './individual-date.component';
 
 const DatesComponent = () => {
-    const {dates} = useAppSelector(state => state.appReducer);
+    const {dates} = useAppSelector(state => state.movieReducer);
 
     return(
         <div className="dates">

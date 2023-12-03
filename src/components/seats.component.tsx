@@ -4,7 +4,7 @@ import { useAppDispatch, useAppSelector } from '@/state/typescript-hooks';
 import IndividualSeatComponent from './individual-seat.component';
 
 const SeatsComponent = () => {
-    const {seats} = useAppSelector(state => state.appReducer);
+    const {seats} = useAppSelector(state => state.movieReducer);
 
     return(
         <div className="seats">

@@ -1,7 +1,7 @@
 import { DateStatusEnum } from "@/enums/date-status.enum";
 import { HourStatusEnum } from "@/enums/hour-status.enum";
 import { SeatStatusEnum } from "@/enums/seat-status.enum";
-import { AppReducerModel } from "@/models/app-reducer.model";
+import { MovieReducerModel } from "@/models/app-reducer.model";
 import { DateModels } from "@/models/date.models";
 import { HourModels } from "@/models/hour.models";
 import { SeatModels } from "@/models/seat.models";
@@ -11,8 +11,8 @@ export class StateService{
     /**
      * Generates the data set for the app seats
      */
-    public static generateSeatsTemplate(): AppReducerModel["seats"] {
-        const seatTemplate: AppReducerModel["seats"] = {
+    public static generateSeatsTemplate(): MovieReducerModel["seats"] {
+        const seatTemplate: MovieReducerModel["seats"] = {
             a: [] as SeatModels.IndividualSeat[],
             b: [] as SeatModels.IndividualSeat[],
             c: [] as SeatModels.IndividualSeat[],

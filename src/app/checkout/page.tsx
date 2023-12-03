@@ -9,7 +9,7 @@ export default function CheckoutPage() {
     selectedDate,
     selectedHour,
     totalPrice,
-  } = useAppSelector(state => state.appReducer);
+  } = useAppSelector(state => state.movieReducer);
 
   return (
     <section className="page">

@@ -11,7 +11,7 @@ interface Props {
 }
 
 const IndividualHourComponent: React.FC<Props> = (props: Props) => {
-    const {hours} = useAppSelector(state => state.appReducer);
+    const {hours} = useAppSelector(state => state.movieReducer);
     const dispatch = useAppDispatch();
 
     useEffect(() => {
