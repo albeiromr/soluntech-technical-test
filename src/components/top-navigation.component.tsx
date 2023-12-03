@@ -8,10 +8,11 @@ import { useEffect } from 'react';
 import { resetAppState } from '@/state/app.reducer';
 
 export default function TopNavigationComponent() {
-  const router = useRouter();
-  const pathname = usePathname();
   const dispatch = useAppDispatch();
 
+  const router = useRouter();
+  const pathname = usePathname();
+  
   useEffect(() => {
     if(pathname === "/") dispatch(resetAppState());
   }, [pathname]);

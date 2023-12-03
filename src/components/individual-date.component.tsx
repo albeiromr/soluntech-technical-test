@@ -34,6 +34,7 @@ const IndividualDateComponent: React.FC<Props> = (props: Props) => {
         <button 
             onClick={handleClick}
             className={props.params.status === DateStatusEnum.selected ? "individual-date--selected" : "individual-date"}
+            disabled={props.params.status === DateStatusEnum.selected}
         >
             <h3>{props.params.weekDay}</h3>
             <p>{props.params.monthDay}</p>

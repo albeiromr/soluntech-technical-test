@@ -34,6 +34,7 @@ const IndividualHourComponent: React.FC<Props> = (props: Props) => {
         <button 
             onClick={handleClick}
             className={props.params.status === HourStatusEnum.selected ? "individual-hour--selected" : "individual-hour" }
+            disabled={props.params.status === HourStatusEnum.selected}
         >
             <p>{props.params.hour}</p>
         </button>
