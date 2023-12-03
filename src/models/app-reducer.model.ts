@@ -1,8 +1,10 @@
 import { SeatModels } from "@/models/seat.models"
 import { DateModels } from "./date.models"
 import { HourModels } from "./hour.models";
+import { MovieModels } from "./movie-models";
 
 export interface AppReducerModel {
+    selectedMovie: MovieModels.CleanMovie;
     seats: {
         a: SeatModels.IndividualSeat[];
         b: SeatModels.IndividualSeat[];
@@ -17,4 +19,5 @@ export interface AppReducerModel {
     selectedDate: DateModels.IndividualDate;
     hours: HourModels.IndividualHour[];
     selectedHour: HourModels.IndividualHour;
+    totalPrice: number;
 }

@@ -1,13 +1,15 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { AppReducerModel } from "../models/app-reducer.model";
+import { AppReducerModel } from "@/models/app-reducer.model";
 import { SeatModels } from "@/models/seat.models";
 import { StateService } from "@/services/state.service";
 import { DateModels } from "@/models/date.models";
 import { DateStatusEnum } from "@/enums/date-status.enum";
 import { HourModels } from "@/models/hour.models";
 import { HourStatusEnum } from "@/enums/hour-status.enum";
+import { MovieModels } from "@/models/movie-models";
 
 const initialState: AppReducerModel = {
+  selectedMovie: {} as MovieModels.CleanMovie,
   seats: {
     a: [] as SeatModels.IndividualSeat[],
     b: [] as SeatModels.IndividualSeat[],
@@ -22,6 +24,7 @@ const initialState: AppReducerModel = {
   selectedDate: {} as DateModels.IndividualDate,
   hours: [] as HourModels.IndividualHour[],
   selectedHour: {} as HourModels.IndividualHour,
+  totalPrice: 0,
 };
 
 export const appReducer = createSlice({
@@ -29,8 +32,14 @@ export const appReducer = createSlice({
   initialState,
   reducers: {
     resetAppState: (state) => {
+      state.selectedMovie = initialState.selectedMovie;
       state.seats = initialState.seats;
       state.selectedSeats = initialState.selectedSeats;
+      state.dates = initialState.dates;
+      state.selectedDate = initialState.selectedDate;
+      state.hours = initialState.hours;
+      state.selectedHour = initialState.selectedHour;
+      state.totalPrice = initialState.totalPrice;
     },
     createSeatsTemplate: (state) => {
       state.seats = StateService.generateSeatsTemplate();

@@ -66,7 +66,7 @@ export default async function MovieDetailsPage(props: Props) {
         Curabitur eu malesuada elit.
       </p>
 
-      <SelectSeatButtonComponent id={movie.id}/>
+      <SelectSeatButtonComponent />
 
     </section>
   )
