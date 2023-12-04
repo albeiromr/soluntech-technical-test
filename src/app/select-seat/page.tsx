@@ -9,7 +9,7 @@ const SelectSeatPage = () => {
     <section className="page">
       <div className="page__display-container">
         <Image
-            src="/static/pantalla.png"   
+            src="/static/screen.png"   
             alt="screen image"
             width={365}
             height={50}
