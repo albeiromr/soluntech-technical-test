@@ -24,7 +24,7 @@ const RootLayout = (props: Props) => {
           <div className="authorized-layout__phone-container">
             <Image
               className="authorized-layout__top-bar"
-              src="/assets/top-bar.jpg"
+              src="/static/top-bar.jpg"
               width={500}
               height={59}
               alt="phone top bar"

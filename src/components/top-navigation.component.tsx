@@ -24,7 +24,7 @@ const TopNavigationComponent = () => {
   return (
     <header className="top-navigation">
       <button onClick={handleBackClick} className="top-navigation__back-button">
-        <img src="/assets/arrow-left.svg" alt="back-button" />
+        <img src="/static/arrow-left.svg" alt="back-button" />
       </button>
       <h1 className="top-navigation__title">{TopNavigationService.generatePageTitle(pathname)}</h1>
     </header>

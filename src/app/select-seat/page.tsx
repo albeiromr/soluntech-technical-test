@@ -9,7 +9,7 @@ const SelectSeatPage = () => {
     <section className="page">
       <div className="page__display-container">
         <Image
-            src="/assets/pantalla.png"   
+            src="/static/pantalla.png"   
             alt="screen image"
             width={365}
             height={50}
@@ -23,7 +23,7 @@ const SelectSeatPage = () => {
 
         <span>
           <Image
-            src="/assets/selected-seat.png"   
+            src="/static/selected-seat.png"   
             alt="seat image"
             width={97}
             height={67}
@@ -34,7 +34,7 @@ const SelectSeatPage = () => {
 
         <span>
           <Image
-            src="/assets/not-available-seat.png"   
+            src="/static/not-available-seat.png"   
             alt="seat image"
             width={97}
             height={67}
@@ -45,7 +45,7 @@ const SelectSeatPage = () => {
 
         <span>
           <Image
-            src="/assets/available-seat.png"   
+            src="/static/available-seat.png"   
             alt="seat image"
             width={97}
             height={67}

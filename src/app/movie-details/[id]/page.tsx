@@ -34,19 +34,19 @@ const MovieDetailsPage = async (props: Props) => {
         <div className="page__hero-info-container">
 
           <div className="page__hero-info-box">
-            <img src="/assets/video-camera.svg" alt="camera icon" />
+            <img src="/static/video-camera.svg" alt="camera icon" />
             <h3>Type</h3>
             <p>{movie.category}</p>
           </div>
 
           <div className="page__hero-info-box">
-            <img src="/assets/clock.svg" alt="clock icon" />
+            <img src="/static/clock.svg" alt="clock icon" />
             <h3>Duration</h3>
             <p>2h 30m</p>
           </div>
 
           <div className="page__hero-info-box">
-            <img src="/assets/star.svg" alt="star icon" />
+            <img src="/static/star.svg" alt="star icon" />
             <h3>Rating</h3>
             <p>9.0/10</p>
           </div>

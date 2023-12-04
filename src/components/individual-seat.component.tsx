@@ -48,7 +48,7 @@ const IndividualSeatComponent: React.FC<Props> = (props: Props) => {
             {
                 props.params.status === SeatStatusEnum.available && <Image
                     className="individual-seat__seat-img"
-                    src="/assets/available-seat.png"   
+                    src="/static/available-seat.png"   
                     alt="seat image"
                     width={97}
                     height={67}
@@ -58,7 +58,7 @@ const IndividualSeatComponent: React.FC<Props> = (props: Props) => {
             {
                 props.params.status === SeatStatusEnum.notAvailable && <Image
                     className="individual-seat__seat-img"
-                    src="/assets/not-available-seat.png"   
+                    src="/static/not-available-seat.png"   
                     alt="seat image"
                     width={97}
                     height={67}
@@ -68,7 +68,7 @@ const IndividualSeatComponent: React.FC<Props> = (props: Props) => {
             {
                 props.params.status === SeatStatusEnum.selected && <Image
                     className="individual-seat__seat-img"
-                    src="/assets/selected-seat.png"   
+                    src="/static/selected-seat.png"   
                     alt="seat image"
                     width={97}
                     height={67}
