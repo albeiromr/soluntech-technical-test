@@ -70,7 +70,9 @@ export class MovieService {
         img: parsedData.results.primaryImage,
         title: parsedData.results.titleText.text,
         type: parsedData.results.titleType.text,
-        category: parsedData.results.titleType.categories[0].value
+        category: parsedData.results.titleType.categories ? 
+          parsedData.results.titleType.categories[0].value :
+          parsedData.results.titleType.text,
       };
     } catch (error) {
       throw error;
